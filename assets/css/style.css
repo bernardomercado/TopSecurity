@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Lato", sans-serif;
+}
+
+.navegador {
+  background-color: #ffffff;
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 100px;
+  position: fixed;
+}
+.navegador .navegador__logo img {
+  height: 80px;
+}
+.navegador .navegador__hamburguesa {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  display: none;
+}
+.navegador .navegador__hamburguesa .fa-bars {
+  font-size: 25px;
+}
+.navegador .navegador__links {
+  height: 100%;
+  transition: transform 0.5s;
+  display: flex;
+  list-style: none;
+}
+.navegador .navegador__links .navegador__links__item {
+  margin-left: 20px;
+  position: relative;
+  --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+}
+.navegador .navegador__links .navegador__links__item .navegador__links__item__a {
+  color: #0D0D0D;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.navegador .navegador__links .navegador__links__item .navegador__links__item__a:hover {
+  color: #2731F2;
+}
+.navegador .navegador__links .navegador__links__item .navegador__links__item__a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+  width: 0;
+  height: 2px;
+  background-color: #2731F2;
+  transition: width 0.3s;
+}
+.navegador .navegador__links .navegador__links__item .navegador__links__item__a:hover::after {
+  width: 100%;
+}
+.navegador .navegador__links .servicios-item:hover {
+  --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+.navegador .navegador__links .servicios-item .subitems {
+  transition: -webkit-clip-path 0.3s;
+  transition: clip-path 0.3s;
+  transition: clip-path 0.3s, -webkit-clip-path 0.3s;
+  -webkit-clip-path: var(--clip);
+          clip-path: var(--clip);
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: #ffffff;
+  border: 1px solid #0D0D0D;
+  width: 250px;
+}
+.navegador .navegador__links .servicios-item .subitems li:not(:last-child) {
+  border-bottom: 1px solid rgba(139, 138, 138, 0.7137254902);
+}
+.navegador .navegador__links .servicios-item .subitems li a {
+  color: #0D0D0D;
+  display: block;
+  padding: 10px 25px;
+}
+.navegador .navegador__links .servicios-item .subitems li a:hover {
+  color: #2731F2;
+  background-color: #f5f5f5;
+}
+.navegador .navegador__links .servicios-item a i {
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+  .navegador {
+    padding: 0 30px;
+  }
+  .navegador .navegador__logo img {
+    height: 50px;
+  }
+  .navegador .navegador__hamburguesa {
+    display: flex;
+  }
+  .navegador .navegador__links {
+    position: fixed;
+    width: 100%;
+    max-width: 400px;
+    top: 80px;
+    bottom: 0;
+    right: 0;
+    background-color: #ffffff;
+    overflow-y: auto;
+    display: grid;
+    grid-auto-rows: max-content;
+    transform: translateX(100%);
+  }
+  .navegador .navegador__links .navegador__links__item {
+    margin: 0;
+    --clip: 0;
+    overflow: hidden;
+  }
+  .navegador .navegador__links .navegador__links__item .navegador__links__item__a {
+    padding: 25px 0;
+    padding-left: 35px;
+    height: auto;
+  }
+  .navegador .navegador__links .navegador__links__item .navegador__links__item__a:hover {
+    color: #2731F2;
+    background-color: #f5f5f5;
+  }
+  .navegador .navegador__links .navegador__links__item .navegador__links__item__a:hover::after {
+    display: none;
+  }
+  .navegador .navegador__links .menu__item--active {
+    --background: #f5f5f5;
+  }
+  .navegador .navegador__links .servicios-item {
+    background-color: var(--background);
+  }
+  .navegador .navegador__links .servicios-item .subitems {
+    display: grid;
+    position: unset;
+    width: 100%;
+    transform: translateY(0);
+    border: none;
+    height: 0;
+    transition: height 0.3s;
+  }
+  .navegador .navegador__links .servicios-item .subitems li {
+    border-bottom: none !important;
+  }
+  .navegador .navegador__links .servicios-item .subitems li a {
+    width: 90%;
+    margin-left: auto;
+    border-left: 1px solid #999999;
+  }
+  .navegador .navegador__links .servicios-item .subitems li a:hover {
+    color: #2731F2;
+    background-color: #f5f5f5;
+  }
+  .navegador .menu__links--show {
+    transform: unset;
+    width: 100%;
+  }
+}
+header {
+  background-color: rgba(69, 178, 211, 0.726);
+  height: 100vh;
+}

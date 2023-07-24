@@ -1,0 +1,171 @@
+.navegador{
+    background-color: #ffffff;
+    height: 80px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 100px;
+    position: fixed;
+    .navegador__logo{
+        img{
+            height: 80px;
+        }
+    }
+    .navegador__hamburguesa{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        cursor: pointer;
+        display: none;
+        .fa-bars{
+            font-size: 25px;     
+        }
+    }
+    .navegador__links{
+        height: 100%;
+        transition: transform .5s;
+        display: flex;
+        list-style: none;
+        .navegador__links__item{
+            margin-left: 20px;
+            position: relative;
+            --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+            .navegador__links__item__a{
+                color: #0D0D0D;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                &:hover{
+                    color: #2731F2;
+                }
+                &::after{
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    bottom: 25px;
+                    width: 0;
+                    height: 2px;
+                    background-color: #2731F2;
+                    transition: width 0.3s;
+                }
+                &:hover::after{
+                    width: 100%;
+                }
+            }
+        }
+        .servicios-item{
+            &:hover{
+                --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            }
+            .subitems{
+                transition: clip-path .3s;
+                clip-path: var(--clip);
+                position: absolute;
+                right: 0;
+                top: 100%;
+                background-color: #ffffff;
+                border: 1px solid #0D0D0D;
+                width: 250px;
+                li{
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #8b8a8ab6;
+                    }
+                    a{
+                        color: #0D0D0D;
+                        display: block;
+                        padding: 10px 25px;
+                        &:hover{
+                            color: #2731F2;
+                            background-color: #f5f5f5
+                        }
+                    }
+                }
+            }
+            a{
+                i{
+                font-size: 12px;
+                margin-left: 5px;
+                margin-top: 4px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px){
+    .navegador{
+        padding: 0 30px;
+        .navegador__logo{
+            img{
+                height: 50px;
+            }
+        }
+        .navegador__hamburguesa{
+            display: flex;
+        }
+        .navegador__links{
+            position: fixed;
+            width: 100%;
+            max-width: 400px;
+            top: 80px;
+            bottom: 0;
+            right: 0;
+            background-color: #ffffff;
+            overflow-y: auto;
+            display: grid;
+            grid-auto-rows: max-content;
+            transform: translateX(100%);
+            .navegador__links__item{
+                margin: 0;
+                --clip: 0;
+                overflow: hidden;
+                .navegador__links__item__a{
+                    padding: 25px 0;
+                    padding-left: 35px;
+                    height: auto;
+                    &:hover{
+                        color: #2731F2;
+                        background-color: #f5f5f5;
+                    }
+                    &:hover::after{
+                        display: none;
+                    }
+                }
+            }
+            .menu__item--active{
+                --background: #f5f5f5;
+            }
+            .servicios-item{
+                background-color: var(--background);
+                .subitems{
+                    display: grid;
+                    position: unset;
+                    width: 100%;
+                    transform: translateY(0);
+                    border: none;
+                    height: 0;
+                    transition: height .3s;
+                    li{
+                        border-bottom: none !important;
+                        a{
+                            width: 90%;
+                            margin-left: auto;
+                            border-left: 1px solid #999999;
+                            &:hover{
+                                color: #2731F2;
+                                background-color: #f5f5f5;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .menu__links--show{
+            transform: unset;
+            width: 100%;
+        }
+    }
+} 
