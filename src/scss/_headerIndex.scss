@@ -1,4 +1,35 @@
-header{
-    background-color: rgba(69, 178, 211, 0.726);
+.encabezado{
+    width: 100vw;
     height: 100vh;
+    background-image: linear-gradient(to right, #020818, #0c246134), url(/assets/img/header-seguridad.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 80px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #ffffff;
+    .encabezado__contenedor{
+        .encabezado__parrafo{
+            width: 70%;
+            font-size: 70px;
+            margin-bottom: 20px;
+        }
+        .encabezado__titulo{
+            font-weight: 400;
+            margin-bottom: 50px;
+        }
+        .encabezado__boton{
+            font-weight: 600;
+            color: #0D0D0D;
+            padding: 15px 70px;
+            background-color: #ffffff;
+            transition: background-color .3s;
+            &:hover{
+                background-color: #FF2A28;
+            }
+        }
+    }
 }
