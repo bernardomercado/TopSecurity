@@ -10,7 +10,7 @@
 .navegador {
   background-color: #ffffff;
   height: 80px;
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -171,7 +171,7 @@
   }
 }
 .encabezado {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   background-image: linear-gradient(to right, #020818, rgba(12, 36, 97, 0.2039215686)), url("../img/header-seguridad.webp");
   background-position: center;
@@ -187,6 +187,7 @@
 .encabezado .encabezado__contenedor .encabezado__parrafo {
   width: 70%;
   font-size: 70px;
+  font-weight: 700;
   margin-bottom: 20px;
 }
 .encabezado .encabezado__contenedor .encabezado__titulo {
@@ -216,5 +217,71 @@
   }
   .encabezado .encabezado__contenedor .encabezado__boton {
     padding: 15px 60px;
+  }
+}
+.nosotros {
+  background-color: #ece8e8;
+}
+.nosotros .nosotros__contenedor {
+  max-width: 100%;
+  padding: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+}
+.nosotros .nosotros__contenedor .nosotros__texto {
+  flex: 1;
+}
+.nosotros .nosotros__contenedor .nosotros__texto .nosotros__texto__titulo {
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+.nosotros .nosotros__contenedor .nosotros__texto .nosotros__texto__parrafo {
+  margin-bottom: 10px;
+  line-height: 25px;
+  font-size: 18px;
+  opacity: 0.85;
+}
+.nosotros .nosotros__contenedor .nosotros__texto .nosotros__texto__parrafo i {
+  margin-right: 5px;
+}
+.nosotros .nosotros__contenedor .nosotros__texto .nosotros__texto__boton {
+  font-weight: 400;
+  color: #ffffff;
+  padding: 10px 50px;
+  background-color: #2731F2;
+  transition: background-color 0.3s;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.nosotros .nosotros__contenedor .nosotros__texto .nosotros__texto__boton:hover {
+  background-color: #FF2A28;
+}
+.nosotros .nosotros__contenedor .nosotros__imagen {
+  flex: 1;
+  height: 380px;
+  overflow: hidden;
+}
+.nosotros .nosotros__contenedor .nosotros__imagen img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+@media (max-width: 768px) {
+  .nosotros .nosotros__contenedor {
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 20px;
+  }
+  .nosotros .nosotros__contenedor .nosotros__imagen {
+    max-width: 100%;
+    margin-top: 20px;
   }
 }
