@@ -173,7 +173,7 @@
 .encabezado {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(to right, #020818, rgba(12, 36, 97, 0.2039215686)), url(/assets/img/header-seguridad.webp);
+  background-image: linear-gradient(to right, #020818, rgba(12, 36, 97, 0.2039215686)), url(./assets/img/header-seguridad.webp);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
