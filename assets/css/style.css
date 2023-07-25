@@ -190,16 +190,31 @@
   margin-bottom: 20px;
 }
 .encabezado .encabezado__contenedor .encabezado__titulo {
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 50px;
 }
 .encabezado .encabezado__contenedor .encabezado__boton {
   font-weight: 600;
-  color: #0D0D0D;
+  color: #ffffff;
   padding: 15px 70px;
-  background-color: #ffffff;
+  background-color: #2731F2;
   transition: background-color 0.3s;
+  display: inline-block;
 }
 .encabezado .encabezado__contenedor .encabezado__boton:hover {
   background-color: #FF2A28;
+}
+
+@media (max-width: 768px) {
+  .encabezado .encabezado__contenedor .encabezado__parrafo {
+    font-size: 45px;
+    width: 100%;
+  }
+  .encabezado .encabezado__contenedor .encabezado__titulo {
+    font-size: 20px;
+    margin-bottom: 35px;
+  }
+  .encabezado .encabezado__contenedor .encabezado__boton {
+    padding: 15px 60px;
+  }
 }
