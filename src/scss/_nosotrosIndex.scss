@@ -1,11 +1,11 @@
 .nosotros{
-    background-color: #ece8e8;
+    background-color: #f5f5f5;
     .nosotros__contenedor{
         max-width: 100%;
         padding: 80px;
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
         gap: 80px;
         .nosotros__texto{
@@ -40,12 +40,47 @@
         }
         .nosotros__imagen{
             flex: 1;
-            height: 380px;
-            overflow: hidden;
             img{
                 width: 100%;
+                height: 100%;
                 object-fit: cover;
                 object-position: center;
+            }
+        }
+    }
+    .nosotros__frase{
+        background-image: url("../img/guardia-seguridad-masculino-frase.webp");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: .8;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h3{
+            font-size: 40px;
+            font-style: italic;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-align: center;
+            padding: 10px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgb(0, 0, 0);
+        }
+    }
+}
+
+@media (max-width: 1000px){
+    .nosotros{
+        .nosotros__contenedor{
+            flex-direction: column;
+            padding: 40px 30px;
+            gap: 30px;
+            .nosotros__imagen{
+                max-width: 100%;
+                margin-top: 20px;
             }
         }
     }
@@ -60,6 +95,13 @@
             .nosotros__imagen{
                 max-width: 100%;
                 margin-top: 20px;
+            }
+        }
+        .nosotros__frase{
+            min-height: 150px;
+            h3{
+                font-size: 20px;
+                font-weight: 400;
             }
         }
     }
