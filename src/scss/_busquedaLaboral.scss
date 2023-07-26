@@ -1,0 +1,33 @@
+.busqueda__laboral{
+    width: 100%;
+    min-height: 300px;
+    background-color: #ff2c28d2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    i{
+        font-size: 50px;
+        margin-bottom: 10px;
+        opacity: .85;
+    }
+    p{
+        font-size: 50px;
+        font-weight: 600;
+        margin-bottom: 10px;
+        opacity: .85;
+    }
+    a{
+        font-weight: 400;
+        color: #ffffff;
+        padding: 10px 50px;
+        background-color: #2731F2;
+        transition: background-color .3s;
+        display: inline-block;
+        border-radius: 5px;
+        margin-top: 10px;
+        &:hover{
+            background-color: #0911a3;
+        }
+    }
+}

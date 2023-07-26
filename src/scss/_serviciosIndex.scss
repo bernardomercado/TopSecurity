@@ -32,7 +32,7 @@
                 height: 100%;
             }
             &:hover{
-                border: 1px solid #000000;
+                // border: 1px solid #000000;
                 cursor: pointer;
             }
             img{
@@ -48,36 +48,33 @@
             p{
                 font-size: 16px;
                 margin-bottom: 20px;
-            }
-            a{
-                display: inline-block;
-                font-weight: 400;
-                color: #ffffff;
-                padding: 10px 20px;
-                background-color: #2731F2;
-                transition: background-color .3s;
-                border-radius: 5px;
-                align-self: flex-start;
-                &:hover{
-                    background-color: #FF2A28;
+                i{
+                    margin-right: 15px;
+                }
+                span{
+                    font-weight: 600;
                 }
             }
             .overlay{
                 position: absolute;
                 bottom: 0;
                 left: 0;
-                background-color: #2731f2ab;
+                background-color: #2731f2af;
                 width: 100%;
                 height: 0;
-                transition: .5s ease;
+                transition: height .5s ease;
                 overflow: hidden;
-                h4{
+                a{
                     color: #ffffff;
-                    font-size: 25px;
+                    font-size: 30px;
+                    font-weight: 400;
                     position: absolute;
                     top: 50%;
                     left: 50%;
                     transform: translate(-50%, -50%);
+                    i{
+                        margin-right: 15px;
+                    }
                 }
             }
         }

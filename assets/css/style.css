@@ -282,7 +282,7 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   opacity: 0.8;
-  min-height: 200px;
+  min-height: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -362,7 +362,6 @@
   height: 100%;
 }
 .servicios .servicios__contenedor .servicios__card:hover {
-  border: 1px solid #000000;
   cursor: pointer;
 }
 .servicios .servicios__contenedor .servicios__card img {
@@ -379,36 +378,33 @@
   font-size: 16px;
   margin-bottom: 20px;
 }
-.servicios .servicios__contenedor .servicios__card a {
-  display: inline-block;
-  font-weight: 400;
-  color: #ffffff;
-  padding: 10px 20px;
-  background-color: #2731F2;
-  transition: background-color 0.3s;
-  border-radius: 5px;
-  align-self: flex-start;
+.servicios .servicios__contenedor .servicios__card p i {
+  margin-right: 15px;
 }
-.servicios .servicios__contenedor .servicios__card a:hover {
-  background-color: #FF2A28;
+.servicios .servicios__contenedor .servicios__card p span {
+  font-weight: 600;
 }
 .servicios .servicios__contenedor .servicios__card .overlay {
   position: absolute;
   bottom: 0;
   left: 0;
-  background-color: rgba(39, 49, 242, 0.6705882353);
+  background-color: rgba(39, 49, 242, 0.6862745098);
   width: 100%;
   height: 0;
-  transition: 0.5s ease;
+  transition: height 0.5s ease;
   overflow: hidden;
 }
-.servicios .servicios__contenedor .servicios__card .overlay h4 {
+.servicios .servicios__contenedor .servicios__card .overlay a {
   color: #ffffff;
-  font-size: 25px;
+  font-size: 30px;
+  font-weight: 400;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+.servicios .servicios__contenedor .servicios__card .overlay a i {
+  margin-right: 15px;
 }
 
 /* Estilos para la vista desde iPad */
@@ -428,4 +424,37 @@
   .servicios .servicios__contenedor {
     grid-template-columns: 1fr; /* 1 tarjeta en una fila para móvil */
   }
+}
+.busqueda__laboral {
+  width: 100%;
+  min-height: 300px;
+  background-color: rgba(255, 44, 40, 0.8235294118);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.busqueda__laboral i {
+  font-size: 50px;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+.busqueda__laboral p {
+  font-size: 50px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.85;
+}
+.busqueda__laboral a {
+  font-weight: 400;
+  color: #ffffff;
+  padding: 10px 50px;
+  background-color: #2731F2;
+  transition: background-color 0.3s;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.busqueda__laboral a:hover {
+  background-color: #0911a3;
 }
