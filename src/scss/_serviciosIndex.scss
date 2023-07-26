@@ -1,0 +1,105 @@
+.servicios{
+    background-color: #ffffff;
+    padding: 80px;
+    .servicios__titulo{
+        h2{
+            font-weight: 900;
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        p{
+            margin-bottom: 50px;
+            line-height: 25px;
+            font-size: 25px;
+            opacity: .85;
+        }
+    }
+    .servicios__contenedor{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr); /* 3 tarjetas en una fila para computadora */
+        gap: 20px; /* Espacio entre las tarjetas */
+        .servicios__card{
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid #b3b3b3;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: border .3s;
+            position: relative;
+            overflow: hidden;
+            &:hover .overlay{
+                height: 100%;
+            }
+            &:hover{
+                border: 1px solid #000000;
+                cursor: pointer;
+            }
+            img{
+                width: 100%;
+                height: auto;
+                border-radius: 5px;
+                margin-bottom: 10px;
+            }
+            h3{
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            p{
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
+            a{
+                display: inline-block;
+                font-weight: 400;
+                color: #ffffff;
+                padding: 10px 20px;
+                background-color: #2731F2;
+                transition: background-color .3s;
+                border-radius: 5px;
+                align-self: flex-start;
+                &:hover{
+                    background-color: #FF2A28;
+                }
+            }
+            .overlay{
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-color: #2731f2ab;
+                width: 100%;
+                height: 0;
+                transition: .5s ease;
+                overflow: hidden;
+                h4{
+                    color: #ffffff;
+                    font-size: 25px;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+        }
+    }
+}
+
+/* Estilos para la vista desde iPad */
+@media (max-width: 1024px) {
+    .servicios{
+        padding: 40px 30px;
+        .servicios__contenedor{
+            grid-template-columns: repeat(2, 1fr); /* 2 tarjetas en una fila para iPad */
+        }
+    }
+}
+
+  /* Estilos para la vista móvil */
+@media (max-width: 768px) {
+    .servicios{
+        padding: 20px 10px;
+        .servicios__contenedor{
+        grid-template-columns: 1fr; /* 1 tarjeta en una fila para móvil */
+        }
+    }
+}

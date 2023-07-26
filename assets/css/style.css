@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
 * {
   margin: 0;
@@ -286,7 +287,7 @@
   align-items: center;
   justify-content: center;
 }
-.nosotros .nosotros__frase h3 {
+.nosotros .nosotros__frase p {
   font-size: 40px;
   font-style: italic;
   font-weight: 600;
@@ -297,7 +298,7 @@
   text-shadow: 2px 2px 4px rgb(0, 0, 0);
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
   .nosotros .nosotros__contenedor {
     flex-direction: column;
     padding: 40px 30px;
@@ -324,5 +325,107 @@
   .nosotros .nosotros__frase h3 {
     font-size: 20px;
     font-weight: 400;
+  }
+}
+.servicios {
+  background-color: #ffffff;
+  padding: 80px;
+}
+.servicios .servicios__titulo h2 {
+  font-weight: 900;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.servicios .servicios__titulo p {
+  margin-bottom: 50px;
+  line-height: 25px;
+  font-size: 25px;
+  opacity: 0.85;
+}
+.servicios .servicios__contenedor {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 tarjetas en una fila para computadora */
+  gap: 20px; /* Espacio entre las tarjetas */
+}
+.servicios .servicios__contenedor .servicios__card {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #b3b3b3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: border 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.servicios .servicios__contenedor .servicios__card:hover .overlay {
+  height: 100%;
+}
+.servicios .servicios__contenedor .servicios__card:hover {
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+.servicios .servicios__contenedor .servicios__card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.servicios .servicios__contenedor .servicios__card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.servicios .servicios__contenedor .servicios__card p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.servicios .servicios__contenedor .servicios__card a {
+  display: inline-block;
+  font-weight: 400;
+  color: #ffffff;
+  padding: 10px 20px;
+  background-color: #2731F2;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  align-self: flex-start;
+}
+.servicios .servicios__contenedor .servicios__card a:hover {
+  background-color: #FF2A28;
+}
+.servicios .servicios__contenedor .servicios__card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(39, 49, 242, 0.6705882353);
+  width: 100%;
+  height: 0;
+  transition: 0.5s ease;
+  overflow: hidden;
+}
+.servicios .servicios__contenedor .servicios__card .overlay h4 {
+  color: #ffffff;
+  font-size: 25px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Estilos para la vista desde iPad */
+@media (max-width: 1024px) {
+  .servicios {
+    padding: 40px 30px;
+  }
+  .servicios .servicios__contenedor {
+    grid-template-columns: repeat(2, 1fr); /* 2 tarjetas en una fila para iPad */
+  }
+}
+/* Estilos para la vista móvil */
+@media (max-width: 768px) {
+  .servicios {
+    padding: 20px 10px;
+  }
+  .servicios .servicios__contenedor {
+    grid-template-columns: 1fr; /* 1 tarjeta en una fila para móvil */
   }
 }

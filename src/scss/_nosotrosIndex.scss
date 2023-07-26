@@ -59,7 +59,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        h3{
+        p{
             font-size: 40px;
             font-style: italic;
             font-weight: 600;
@@ -72,7 +72,7 @@
     }
 }
 
-@media (max-width: 1000px){
+@media (max-width: 1024px){
     .nosotros{
         .nosotros__contenedor{
             flex-direction: column;
