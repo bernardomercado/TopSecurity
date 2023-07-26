@@ -144,6 +144,42 @@
             <a href="#">Déjanos tu CV</a>
         </section>
 
+        <section class="contacto">
+            <div class="contacto__titulo">
+                <h2>Contacto</h2>
+                <p>Cualquier consulta no dudas en escribirnos.</p>
+            </div>
+
+            <div class="formulario">
+                <div class="formulario__contenedor">
+                    <form class="form" id="contacto__formulario" action="#" method="POST" target="_blank">
+                    <label>
+                        Nombre:
+                        <input type="text" name="nombre" placeholder="Escriba su nombre" required>
+                    </label>
+                    <label>
+                        E-mail:
+                        <input type="email" name="email" placeholder="Escriba su email" required>
+                    </label>
+                    <label>
+                        Teléfono:
+                        <input type="tel" name="teléfono" placeholder="Escriba su teléfono" required>
+                    </label>
+                    <label>
+                        Mensaje:
+                        <textarea name="mensaje" placeholder="Escriba un mensaje"></textarea>
+                    </label>
+                    <input type="submit" class="boton" value="Enviar">
+                    <input type="hidden" name="_captcha" value="false">
+                    </form>
+                </div>
+    
+                <div class="formulario__imagen">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+            </div>
+        </section>
+
     </main>
 
 
