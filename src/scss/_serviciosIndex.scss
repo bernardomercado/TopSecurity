@@ -100,7 +100,14 @@
     .servicios{
         padding: 40px 20px;
         .servicios__contenedor{
-        grid-template-columns: 1fr; /* 1 tarjeta en una fila para móvil */
+            grid-template-columns: 1fr; /* 1 tarjeta en una fila para móvil */
+            .servicios__card{
+                .overlay{
+                    a{
+                        font-size: 22px;
+                    }
+                }
+            }
         }
     }
 }

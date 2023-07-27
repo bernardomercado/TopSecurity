@@ -437,6 +437,9 @@
   .servicios .servicios__contenedor {
     grid-template-columns: 1fr; /* 1 tarjeta en una fila para móvil */
   }
+  .servicios .servicios__contenedor .servicios__card .overlay a {
+    font-size: 22px;
+  }
 }
 .busqueda__laboral {
   width: 100%;
