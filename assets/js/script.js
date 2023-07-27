@@ -1,4 +1,4 @@
-// Menú hamburguesa
+// MENU HAMBURGUESA
 (function() {
   const listElements = document.querySelectorAll('.servicios-item');
   const list = document.querySelector('.navegador__links');
@@ -44,3 +44,31 @@
 
   menu.addEventListener('click', () => list.classList.toggle('menu__links--show'));
 })();
+
+
+// CLICK EN LOGO E INICIO - DESLIZAR HACIA ARRIBA - NO RECARGAR LA PAGINA
+// Función reutilizable para el desplazamiento suave hacia arriba
+function scrollToTop(event) {
+  // Prevenir la acción predeterminada del enlace (no se recargará la página)
+  event.preventDefault();
+
+  // Desplazarse hacia arriba suavemente utilizando smooth scroll
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  // Obtener el enlace del logo por su clase
+  const logoLink = document.querySelector(".navegador__logo__link");
+
+  // Agregar un evento de clic al enlace del logo
+  logoLink.addEventListener("click", scrollToTop);
+
+  // Obtener el enlace "INICIO" por su ID
+  const inicioLink = document.getElementById("inicioLink");
+
+  // Agregar un evento de clic al enlace "INICIO"
+  inicioLink.addEventListener("click", scrollToTop);
+});
