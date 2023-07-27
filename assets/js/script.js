@@ -1,54 +1,46 @@
-
 // Menú hamburguesa
-(function(){
-   const listElements = document.querySelectorAll('.servicios-item');
-   const list = document.querySelector('.navegador__links');
-   const menu = document.querySelector('.navegador__hamburguesa');
+(function() {
+  const listElements = document.querySelectorAll('.servicios-item');
+  const list = document.querySelector('.navegador__links');
+  const menu = document.querySelector('.navegador__hamburguesa');
+  let isSmallScreen = window.innerWidth <= 768;
 
-   const AddClick = ()=>{
-    listElements.forEach(element =>{
-      element.addEventListener('click', ()=>{
+  const toggleSubMenu = (element) => {
+    const subMenu = element.children[1];
+    const height = subMenu.clientHeight === 0 ? subMenu.scrollHeight : 0;
+    subMenu.style.height = `${height}px`;
+    element.classList.toggle('menu__item--active', height > 0);
+  };
 
-        let subMenu = element.children[1];
-        let height = 0;
-        element.classList.toggle('menu__item--active');
+  const resetSubMenuStyles = () => {
+    listElements.forEach(element => {
+      const subMenu = element.children[1];
+      subMenu.style.height = '';
+      element.classList.remove('menu__item--active');
+    });
+  };
 
-        if(subMenu.clientHeight === 0){
-          height = subMenu.scrollHeight;
-        }
+  const clickHandler = (event) => {
+    toggleSubMenu(event.currentTarget);
+  };
 
-        subMenu.style.height = `${height}px`;
-
-      })
-    })
-  }
-
-  const deleteStyleHeight = ()=>{
-    listElements.forEach(element =>{
-
-      if(element.children[1].getAttribute('style')){
-        element.children[1].removeAttribute('style');
-        element.children[1].remove('menu__item--active');
+  const handleResize = () => {
+    const currentIsSmallScreen = window.innerWidth <= 768;
+    if (isSmallScreen !== currentIsSmallScreen) {
+      isSmallScreen = currentIsSmallScreen;
+      if (isSmallScreen) {
+        listElements.forEach(element => element.addEventListener('click', clickHandler));
+      } else {
+        listElements.forEach(element => element.removeEventListener('click', clickHandler));
+        resetSubMenuStyles();
+        list.classList.remove('menu__links--show');
       }
-
-    })
-  }
-
-  window.addEventListener('resize', ()=>{
-    if(window.innerWidth > 768){
-      deleteStyleHeight();
-      if(list.classList.contains('menu__links--show'))
-        list.classList.remove('menu__links--show')
-
-    }else{
-      AddClick();
     }
-  });
+  };
 
-  if(window.innerWidth <= 768){
-    AddClick();
-  }
+  window.addEventListener('resize', handleResize);
 
-  menu.addEventListener('click', ()=>list.classList.toggle('menu__links--show'))
+  listElements.forEach(element => element.addEventListener('click', clickHandler));
 
+  menu.addEventListener('click', () => list.classList.toggle('menu__links--show'));
 })();

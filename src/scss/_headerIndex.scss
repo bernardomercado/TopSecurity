@@ -17,21 +17,25 @@
             font-size: 70px;
             font-weight: 700;
             margin-bottom: 20px;
+            text-shadow: 0 0 30px hsla(0, 0%, 100%, 0.4);
         }
         .encabezado__titulo{
             font-weight: 300;
             margin-bottom: 50px;
+            opacity: .85;
         }
         .encabezado__boton{
             font-weight: 600;
             color: #ffffff;
             padding: 15px 70px;
             background-color: #2731F2;
-            transition: background-color .3s;
             display: inline-block;
             border-radius: 5px;
+            box-shadow: 0 0 20px 0 #2731F2;
+            transition: background-color 0.3s, box-shadow 0.3s;
             &:hover{
                 background-color: #FF2A28;
+                box-shadow: 0 0 20px 0 #FF2A28;
             }
         }
     }
